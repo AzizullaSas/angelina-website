@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# EDIT: replace YOURDOMAIN.com with your real web address once deployed
+Sitemap: https://YOURDOMAIN.com/sitemap.xml

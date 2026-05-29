@@ -1,0 +1,11 @@
+# OS / editor cruft
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Local source backups — not needed for the live website.
+# (Remove this line if you want the original photos/videos backed up on GitHub too.)
+_originals/
+
+# Node tooling (only if added later)
+node_modules/

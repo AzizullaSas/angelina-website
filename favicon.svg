@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Angelina">
+  <rect width="64" height="64" rx="14" fill="#FBF6F0"/>
+  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-style="italic" fill="#C9A86A">A</text>
+  <path d="M15 50 q8.5 -6 17 0 t17 0" fill="none" stroke="#5E9CA6" stroke-width="2.6" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,13 @@
+{
+  "name": "Angelina — Dance Artist",
+  "short_name": "Angelina",
+  "description": "Mermaid & oriental-fusion dance artist. Book a performance.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF6F0",
+  "theme_color": "#FBF6F0",
+  "icons": [
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
