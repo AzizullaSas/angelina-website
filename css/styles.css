@@ -98,6 +98,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  overflow-wrap: break-word; /* long words/links never force a sideways scroll */
 }
 img, video, svg { display: block; max-width: 100%; }
 img, video { height: auto; }
@@ -371,6 +372,20 @@ em, .accent-italic { font-style: italic; color: var(--teal-mid); }
   gap: var(--space-7);
 }
 .hero__content { max-width: 640px; }
+/* Mobile: a soft frosted panel keeps the hero copy legible over the photo at
+   ANY screen height (short phones otherwise ride up over the busy image and the
+   text becomes hard to read / looks like it overlaps). Removed on desktop below. */
+@media (max-width: 979px) {
+  .hero__content {
+    background: linear-gradient(180deg, rgba(251,246,240,0.42), rgba(251,246,240,0.74));
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    padding: var(--space-6) var(--space-5);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255,255,255,0.55);
+    box-shadow: 0 12px 44px -20px rgba(34,69,75,0.5);
+  }
+}
 .hero__eyebrow { color: var(--teal); }
 .hero__title { font-size: var(--fs-display); font-weight: 500; color: var(--deep-sea); margin-bottom: var(--space-4); }
 .hero__tagline { font-size: var(--fs-lede); font-weight: 300; max-width: 36ch; margin-bottom: var(--space-6); color: var(--text); }
@@ -525,6 +540,8 @@ em, .accent-italic { font-style: italic; color: var(--teal-mid); }
    Video showcase
    ============================================================= */
 .video__grid { display: grid; gap: var(--space-5); grid-template-columns: 1fr; max-width: 340px; margin-inline: auto; }
+/* Keep portrait clips from getting too tall on small phones */
+.video__grid .video-card__frame { max-height: 78vh; }
 .video-card { display: flex; flex-direction: column; gap: var(--space-3); }
 .video-card__frame {
   position: relative;
@@ -554,7 +571,8 @@ em, .accent-italic { font-style: italic; color: var(--teal-mid); }
 .video-card__caption { font-size: var(--fs-small); color: var(--text-muted); text-align: center; font-family: var(--font-heading); font-style: italic; font-size: 1.05rem; }
 .video__cta { text-align: center; margin-top: var(--space-7); }
 
-@media (min-width: 720px) { .video__grid { max-width: none; grid-template-columns: repeat(3, minmax(0, 300px)); justify-content: center; } }
+@media (min-width: 600px) { .video__grid { max-width: none; grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; } }
+@media (min-width: 1040px) { .video__grid { grid-template-columns: repeat(4, minmax(0, 260px)); } }
 
 /* =============================================================
    Booking
@@ -606,6 +624,9 @@ em, .accent-italic { font-style: italic; color: var(--teal-mid); }
 .contact-item__icon svg { width: 20px; height: 20px; }
 .contact-item__label { display: block; font-size: var(--fs-small); text-transform: uppercase; letter-spacing: 1.5px; color: var(--teal-mid); }
 .contact-item a, .contact-item span { font-size: 1.05rem; color: var(--deep-sea); }
+/* Long emails/handles must wrap, not force the page wider than the phone */
+.contact-item > span { min-width: 0; }
+.contact-item a, .contact-item__label { overflow-wrap: anywhere; }
 
 @media (min-width: 880px) { .booking__grid { grid-template-columns: 1.2fr 0.8fr; } }
 
@@ -637,7 +658,7 @@ em, .accent-italic { font-style: italic; color: var(--teal-mid); }
 .footer__social a:hover { background: var(--gold); color: var(--deep-sea); transform: translateY(-2px); }
 .footer__social svg { width: 20px; height: 20px; }
 .footer__contact { color: rgba(255,255,255,0.8); display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); justify-content: center; }
-.footer__contact a { color: var(--gold-light); }
+.footer__contact a { color: var(--gold-light); overflow-wrap: anywhere; }
 .footer__nav { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-5); justify-content: center; }
 .footer__nav a { color: rgba(255,255,255,0.8); font-size: var(--fs-small); text-transform: uppercase; letter-spacing: 1.5px; }
 .footer__legal { font-size: var(--fs-small); color: rgba(255,255,255,0.55); }

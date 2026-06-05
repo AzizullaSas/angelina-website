@@ -9,3 +9,6 @@ _originals/
 
 # Node tooling (only if added later)
 node_modules/
+
+# Local screenshot/verification output — not part of the website
+_verify/

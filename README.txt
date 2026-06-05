@@ -101,7 +101,7 @@ PHOTOS:
   or "hero.jpg"). Tall "portrait" photos look best.
 
 VIDEOS:
-  The site plays files named showreel-1.mp4, showreel-2.mp4, showreel-3.mp4
+  The site plays files named showreel-1.mp4 ... showreel-4.mp4
   in "assets/video". Phone videos are usually ".MOV" and must be turned
   into ".mp4" for websites. If you have FFmpeg installed, open PowerShell
   in this folder and run (one line):
